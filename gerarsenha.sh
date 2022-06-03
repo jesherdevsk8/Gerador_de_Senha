@@ -6,8 +6,25 @@
 # ./gerarsenha.sh
 # sudo ln -s $HOME/gerarsenha.sh /usr/local/bin/gerarsenha
 # Desde: Dom 01 Mai 01:59:28 BRT 2022
-# Versão: 1
+# Versão: 1.2
 # Licença: GPLv3
+#
+# Proxima feature proteger o arquivo que irá armazenar as senhas
+# https://www.tecmundo.com.br/backup/2556-como-proteger-arquivos-com-senha-no-linux-.htm
+
+#----------------------- VARIAVEIS --------------------------
+titulo="Armazene suas senhas aqui
+site-aqui.org
+Senha: $cabecalho
+---------------------
+"
+arquivo="$HOME/.senhadb"
+
+#------------------------ TESTES ----------------------------
+
+[[ "$UID" = "0" ]] && echo "Não é possivel executar como root!!" && exit 1
+
+#------------------------ FUNÇÕES ---------------------------
 
 gerarsenha(){
  # variaveis
@@ -31,6 +48,11 @@ gerarsenha(){
 
  echo
 }
+
+#------------------------- MAIN -----------------------------
+
+#Testa se arquivo já existe, se não existir ele cria
+[[ ! -f $arquivo ]] && echo "$titulo" > $arquivo && chmod 600 $arquivo
 
 #chamando a função
 gerarsenha
