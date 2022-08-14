@@ -9,9 +9,6 @@
 # Versão: 1.2
 # Licença: GPLv3
 #
-# Proxima feature proteger o arquivo que irá armazenar as senhas
-# https://www.tecmundo.com.br/backup/2556-como-proteger-arquivos-com-senha-no-linux-.htm
-
 #----------------------- VARIAVEIS --------------------------
 titulo="Armazene suas senhas aqui
 site-aqui.org
